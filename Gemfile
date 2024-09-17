@@ -2,6 +2,11 @@ source "https://rubygems.org"
 
 ruby "3.2.2"
 
+#ADDING HERE -- SHASHI
+gem "bootstrap", "~>5.2.2"
+gem "sassc-rails"
+#TILL HERE
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.1.3"
 
@@ -45,8 +50,12 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  #Adding sqlite3 here and commenting above
+  #gem "sqlite3", "~> 1.4"
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem "debug", platforms: %i[ mri windows ]
+  #gem "debug", platforms: %i[ mri windows ]
+  # SHASHI adding here byebug gem to debug
+  gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
 end
 
 group :development do
