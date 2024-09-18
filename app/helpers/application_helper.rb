@@ -5,7 +5,7 @@ module ApplicationHelper
     hash = Digest::MD5.hexdigest(email_address)
     size = options[:size]
     robot_url = "https://robohash.org/#{hash}.png/bgset_any?size=#{size}"
-    image_tag(robot_url, alt: user.username, class: "rounded-circle shadow mx-auto d-block") 
+    image_tag(robot_url, alt: user.username, class: "rounded-circle shadow mx-auto d-block", size: "#{size}x#{size}") 
   end
 
 end
