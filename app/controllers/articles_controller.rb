@@ -25,6 +25,7 @@ class ArticlesController < ApplicationController
     # WE SAVE OUR ARTICLES FROM HERE
     def create
       #render plain: params[:article]
+      byebug
       @article = Article.new(article_params)
       @article.user = current_user
       #render plain: @article.inspect
@@ -66,7 +67,7 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, :description)
+      params.require(:article).permit(:title, :description, category_ids: [])
     end
 
     def require_same_user
